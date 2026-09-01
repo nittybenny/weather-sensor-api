@@ -15,7 +15,7 @@ public class SensorReading {
     @Column(nullable = false, updatable = false)
     private String sensorId;
 
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     private Double temperature;
 
     @Column(nullable = false, updatable = false)

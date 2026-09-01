@@ -58,13 +58,13 @@ class WeatherSensorApiApplicationTests {
     }
 
     @Test
-    void shouldReturnBadRequestWhenTemperatureIsMissing() throws Exception {
+    void shouldReturn200WhenTemperatureIsMissing() throws Exception {
         String invalidJson = "{\"timestamp\": \"2026-08-27T10:00:00Z\"}";
 
         mockMvc.perform(post("/api/v1/sensors/sensor-1/readings")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(invalidJson))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isCreated());
     }
 
     @Test
